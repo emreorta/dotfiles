@@ -114,9 +114,9 @@ endif
 
 set termguicolors
 if $ITERM_PROFILE =~? 'light'
-  colorscheme solarized8_light
+  colorscheme flattened_light
 else
-  colorscheme solarized8_dark
+  colorscheme flattened_dark
 endif
 
 syntax sync minlines=256
