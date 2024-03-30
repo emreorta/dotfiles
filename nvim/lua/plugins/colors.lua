@@ -7,6 +7,7 @@ return {
     {
         "tjdevries/colorbuddy.nvim",
     },
+    -- favorites
     {
         "rebelot/kanagawa.nvim",
         config = function()
@@ -21,18 +22,11 @@ return {
             ColorMyPencils()
         end
     },
-
-    { "arcticicestudio/nord-vim" },
-    { "tomasiser/vim-code-dark" },
-    { "overcache/NeoSolarized" },
-    { "ayu-theme/ayu-vim" },
-    { "sainnhe/everforest" },
-    { "rebelot/kanagawa.nvim" },
-    { "catppuccin/nvim", name = "catppuccin" },
-    { "folke/tokyonight.nvim" },
+    { "EdenEast/nightfox.nvim" },
     { "morhetz/gruvbox" },
-    {
-        "loganswartz/sunburn.nvim",
-        dependencies = { "loganswartz/polychrome.nvim" }
-    },
+
+    -- also not bad
+    { "catppuccin/nvim",        name = "catppuccin" },
+    { "tomasiser/vim-code-dark" },
+    { "sainnhe/everforest" },
 }
