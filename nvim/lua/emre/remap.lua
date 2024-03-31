@@ -1,39 +1,50 @@
 vim.g.mapleader = " "
+
+-- open netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- move line(s) up and down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- keeps the cursor at the same place `J`
 vim.keymap.set("n", "J", "mzJ`z")
+
+-- apply the following commands but center view afterwards
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-
--- replace without losing actual copy
--- example: copy "foo" to replace "bar". normally, you'd end up with "bar"
---          after copy-paste with just `p`. `<leader>p` allows you to paste
---          while keeping "foo" still in the clipboard
-vim.keymap.set("x", "<leader>p", [["_dP]])
-
--- allows pasting whatever yanked within vim
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
-vim.keymap.set("i", "<C-c>", "<Esc>")
-
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- paste without resetting the buffer
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- yank whatever you want from vim and paste it elsewhere
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- delete stuff without reseting the buffer
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
+-- use ctrl-c as esc as well
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- disable Q
+vim.keymap.set("n", "Q", "<nop>")
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
+
+-- format the code using lsp
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- replace the word under cursor globally
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- chmod +x your script from vim
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- easier navigation between panes
@@ -42,7 +53,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
--- same but in terminal
+-- same as above but between tmux and vim
 vim.keymap.set("t", "<C-h>", "<cmd>wincmd <C-w>h<CR>")
 vim.keymap.set("t", "<C-j>", "<cmd>wincmd <C-w>j<CR>")
 vim.keymap.set("t", "<C-k>", "<cmd>wincmd <C-w>k<CR>")
