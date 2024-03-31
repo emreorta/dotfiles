@@ -36,8 +36,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- disable Q
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
-
 -- format the code using lsp
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
