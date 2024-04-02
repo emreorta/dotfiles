@@ -57,6 +57,9 @@ vim.keymap.set("t", "<C-j>", "<cmd>wincmd <C-w>j<CR>")
 vim.keymap.set("t", "<C-k>", "<cmd>wincmd <C-w>k<CR>")
 vim.keymap.set("t", "<C-l>", "<cmd>wincmd <C-w>l<CR>")
 
+-- allows using tab to cycle between brackets, curly brackets, parantheses etc.
+vim.keymap.set("n", "<Tab>", "%")
+
 -- adds`if err != nil` below
 vim.keymap.set(
     "n",
