@@ -57,18 +57,25 @@ vim.keymap.set("t", "<C-l>", "<cmd>wincmd <C-w>l<CR>")
 -- allows using tab to cycle between brackets, curly brackets, parantheses etc.
 vim.keymap.set("n", "<Tab>", "%")
 
--- adds`if err != nil` below
+-- adds`if err != nil` in the line below
 vim.keymap.set(
     "n",
     "<leader>ee",
     "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
--- adds ipdb below for debugging
+-- adds ipdb in the line below for debugging
 vim.keymap.set(
     "n",
     "<leader>ip",
     "o__import__('ipdb').set_trace()<CR><Esc>"
+)
+
+-- adds if __name__ == "__main__" in the line below
+vim.keymap.set(
+    "n",
+    "<leader>nm",
+    'oif __name__ == "__main__":<CR><Esc>"'
 )
 
 vim.keymap.set("n", "<leader><leader>", function()
