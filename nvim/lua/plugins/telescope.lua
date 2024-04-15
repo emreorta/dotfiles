@@ -1,7 +1,10 @@
 return {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.6',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'Myzel394/jsonfly.nvim'
+    },
     config = function()
         require('telescope').setup({})
 
@@ -20,5 +23,6 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+        vim.keymap.set('n', '<leader>j', "<cmd>Telescope jsonfly<CR>", {})
     end
 }
