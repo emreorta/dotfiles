@@ -15,3 +15,5 @@ set -gx EDITOR nvim
 
 # useful aliases
 alias k="kubectl"
+
+set -gx NVIM_COLORSCHEME "nightfox"
