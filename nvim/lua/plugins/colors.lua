@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or os.getenv("NVIM_COLORSCHEME") or "kanagawa"
+    color = color or os.getenv("NVIM_COLORSCHEME") or "nightfox"
     vim.cmd.colorscheme(color)
 end
 
@@ -7,6 +7,7 @@ return {
     {
         "tjdevries/colorbuddy.nvim",
     },
+
     -- favorites
     {
         "rebelot/kanagawa.nvim",
@@ -26,7 +27,6 @@ return {
     { "morhetz/gruvbox" },
 
     -- also not bad
-    { "catppuccin/nvim",        name = "catppuccin" },
     { "tomasiser/vim-code-dark" },
     { "sainnhe/everforest" },
 }
