@@ -78,14 +78,14 @@ return {
 
                     local opts = { buffer = bufnr, remap = false }
                     vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
-                    vim.keymap.set("n", "md", function() vim.lsp.buf.definition() end, opts)
-                    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-                    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-                    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-                    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-                    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-                    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-                    vim.keymap.set("n", "<C-g>", function() vim.lsp.buf.signature_help() end, opts)
+                    vim.keymap.set("n", "md", vim.lsp.buf.definition, opts)
+                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                    vim.keymap.set("n", "<leader>od", vim.diagnostic.open_float, opts)
+                    vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+                    vim.keymap.set("n", "<leader>rf", vim.lsp.buf.references, opts)
+                    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+                    vim.keymap.set("n", "<C-g>", vim.lsp.buf.signature_help, opts)
                 end)
 
                 require("mason-lspconfig").setup({
@@ -103,6 +103,7 @@ return {
                 require("mason-null-ls").setup({
                     ensure_installed = {
                         "black",
+                        "prettier",
                         "yamlfmt"
                     }
                 })
@@ -111,6 +112,7 @@ return {
                 null_ls.setup({
                     sources = {
                         null_ls.builtins.formatting.black,
+                        null_ls.builtins.formatting.prettier,
                         null_ls.builtins.formatting.yamlfmt
                     }
                 })
