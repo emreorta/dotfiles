@@ -1,0 +1,45 @@
+{
+    "description": "Swap left_control with left_command in Alacritty and iTerm2",
+    "manipulators": [
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "^org\\.alacritty$",
+                        "^com\\.googlecode\\.iterm2$"
+                    ],
+                    "type": "frontmost_application_if"
+                }
+            ],
+            "from": {
+                "key_code": "left_command"
+            },
+            "to": [
+                {
+                    "key_code": "left_control"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "^org\\.alacritty$",
+                        "^com\\.googlecode\\.iterm2$"
+                    ],
+                    "type": "frontmost_application_if"
+                }
+            ],
+            "from": {
+                "key_code": "left_control"
+            },
+            "to": [
+                {
+                    "key_code": "left_command"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
