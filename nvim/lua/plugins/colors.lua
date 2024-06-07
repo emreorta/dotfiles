@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function SetColorscheme(color)
     color = color or os.getenv("NVIM_COLORSCHEME") or "nightfox"
     vim.cmd.colorscheme(color)
 end
@@ -20,7 +20,7 @@ return {
                 terminalColors = true,
             })
 
-            ColorMyPencils()
+            SetColorscheme()
         end
     },
     { "EdenEast/nightfox.nvim" },
