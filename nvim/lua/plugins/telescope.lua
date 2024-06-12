@@ -6,14 +6,27 @@ return {
         "Myzel394/jsonfly.nvim"
     },
     config = function()
-        require("telescope").setup({})
+        require("telescope").setup({
+            defaults = {
+                vimgrep_arguments = {
+                    "rg",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    "--trim",
+                    "--ignore-file",
+                    ".gitignore"
+                }
+            }
+        })
 
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>ff",
             function()
-                builtin.find_files({ hidden = true, no_ignore = true })
+                builtin.find_files({ hidden = true })
             end, {})
-        vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+        vim.keymap.set("n", "<leader>fp", builtin.git_files, {})
         vim.keymap.set("n", "<leader>fws", function()
             local word = vim.fn.expand("<cword>")
             builtin.grep_string({ search = word })
