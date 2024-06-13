@@ -24,7 +24,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- delete stuff without reseting the buffer
+-- delete stuff without resetting the buffer
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- use ctrl-c as esc as well
@@ -38,6 +38,9 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- replace the word under cursor globally
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- replace the word under cursor in the same line only
+vim.keymap.set("n", "<leader>cs", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- chmod +x your script from vim
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
@@ -54,7 +57,7 @@ vim.keymap.set("t", "<C-j>", "<cmd>wincmd <C-w>j<CR>")
 vim.keymap.set("t", "<C-k>", "<cmd>wincmd <C-w>k<CR>")
 vim.keymap.set("t", "<C-l>", "<cmd>wincmd <C-w>l<CR>")
 
--- allows using tab to cycle between brackets, curly brackets, parantheses etc.
+-- allows using tab to cycle between brackets, curly brackets, parentheses etc.
 vim.keymap.set("n", "<Tab>", "%")
 
 -- adds`if err != nil` in the line below
