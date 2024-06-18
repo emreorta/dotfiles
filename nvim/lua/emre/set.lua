@@ -33,5 +33,8 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
 -- nvim switches language sometimes for some reason
 vim.cmd("language en_US")
