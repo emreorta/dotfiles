@@ -16,7 +16,8 @@ set -x PYTHONDONTWRITEBYTECODE True
 # nvim > vim
 set -gx EDITOR nvim 
 
+# NVIM_COLORSCHEME is used in ../nvim/lua/plugins/colors.lua for colorscheme
+set -gx NVIM_COLORSCHEME "nightfox"
+
 # useful aliases
 alias k="kubectl"
-
-set -gx NVIM_COLORSCHEME "nightfox"
