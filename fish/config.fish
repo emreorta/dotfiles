@@ -7,6 +7,12 @@ fish_add_path /opt/homebrew/opt/python/libexec/bin
 # enable fzf keybindings for fish
 fzf --fish | source
 
+# enable atuin keybindings for fish
+set -gx ATUIN_NOBIND "true"
+atuin init fish --disable-up-arrow | source
+bind \cr _atuin_search
+bind -M insert \cr _atuin_search
+
 # as a safeguard to make sure that fish works within the integrated terminal of vscode
 string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
 
