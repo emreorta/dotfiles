@@ -25,5 +25,8 @@ set -gx EDITOR nvim
 # NVIM_COLORSCHEME is used in ../nvim/lua/plugins/colors.lua for colorscheme
 set -gx NVIM_COLORSCHEME "nightfox"
 
+# not really needed but kind of useful to have
+set -gx VIRTUALENVS_HOME "~/.virtualenvs"
+
 # useful aliases
 alias k="kubectl"
