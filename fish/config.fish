@@ -30,3 +30,4 @@ set -gx VIRTUALENVS_HOME "~/.virtualenvs"
 
 # useful aliases
 alias k="kubectl"
+alias vim="nvim"
