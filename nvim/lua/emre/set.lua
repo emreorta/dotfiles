@@ -37,3 +37,7 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 
 vim.g.python3_host_prog = os.getenv("VIRTUALENVS_HOME") .. "/neovim/bin/python"
+
+vim.opt.jumpoptions = "stack,view"
+
+vim.opt.foldlevelstart=99
