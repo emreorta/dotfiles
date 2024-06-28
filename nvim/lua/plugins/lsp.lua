@@ -73,7 +73,7 @@ return {
                 local lsp_zero = require("lsp-zero")
                 lsp_zero.extend_lspconfig()
 
-                lsp_zero.on_attach(function(client, bufnr)
+                lsp_zero.on_attach(function(_, bufnr)
                     lsp_zero.default_keymaps({ buffer = bufnr })
 
                     local opts = { buffer = bufnr, remap = false }
@@ -88,6 +88,7 @@ return {
                     vim.keymap.set("n", "<C-g>", vim.lsp.buf.signature_help, opts)
                 end)
 
+                require("fidget").setup({})
                 require("mason-lspconfig").setup({
                     ensure_installed = {},
                     handlers = {
