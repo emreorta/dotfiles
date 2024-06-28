@@ -13,15 +13,11 @@ return {
         highlight = { enable = true },
         indent = { enable = true },
         ensure_installed = {
-            "bash",
             "c",
-            "json",
             "lua",
-            "go",
-            "python",
             "vim",
             "vimdoc",
-            "yaml"
+            "query"
         },
     },
 }
