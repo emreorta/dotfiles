@@ -15,6 +15,7 @@ return {
             lazy = false,
             config = true,
         },
+        { "onsails/lspkind.nvim" },
 
         -- Autocompletion
         {
@@ -113,12 +114,21 @@ return {
                 null_ls.setup({
                     sources = {
                         null_ls.builtins.formatting.black,
+                        null_ls.builtins.formatting.isort,
                         null_ls.builtins.formatting.prettier,
                         null_ls.builtins.formatting.yamlfmt
                     }
                 })
-            end
+
+                vim.diagnostic.config({
+                    virtual_text = true,
+                    signs = true,
+                    update_in_insert = false,
+                    underline = true,
+                    severity_sort = false,
+                    float = true,
+                })
+            end,
         },
-        { "onsails/lspkind.nvim" },
     }
 }
