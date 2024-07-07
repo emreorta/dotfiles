@@ -39,4 +39,5 @@ return {
   },
   { "tomasiser/vim-code-dark" },
   { "sainnhe/everforest" },
+  { "sainnhe/gruvbox-material" },
 }

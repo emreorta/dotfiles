@@ -7,6 +7,7 @@
   "everforest": { "branch": "master", "commit": "752a026157f5befaf705bccbcb2ddb5b67703e03" },
   "fidget.nvim": { "branch": "main", "commit": "ef99df04a1c53a453602421bc0f756997edc8289" },
   "gruvbox": { "branch": "master", "commit": "f1ecde848f0cdba877acb0c740320568252cc482" },
+  "gruvbox-material": { "branch": "master", "commit": "23371661bac2b7fdd9769c685e4224990c3b9ab8" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "hlargs.nvim": { "branch": "main", "commit": "cc0d9ee75e5ffba730393049119361b9e3a5b1b6" },
   "jsonfly.nvim": { "branch": "main", "commit": "4d22028b13513f14f0739d3833b2dfca7a6c7aef" },
