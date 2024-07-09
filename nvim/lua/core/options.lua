@@ -40,4 +40,4 @@ vim.g.python3_host_prog = os.getenv("VIRTUALENVS_HOME") .. "/neovim/bin/python"
 
 vim.opt.jumpoptions = "stack,view"
 
-vim.opt.foldlevelstart=99
+vim.opt.foldlevelstart = 99

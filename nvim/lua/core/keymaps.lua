@@ -62,25 +62,25 @@ vim.keymap.set("n", "<Tab>", "%")
 
 -- adds`if err != nil` in the line below
 vim.keymap.set(
-    "n",
-    "<leader>ee",
-    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
+  "n",
+  "<leader>ee",
+  "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
 -- adds ipdb in the line below for debugging
 vim.keymap.set(
-    "n",
-    "<leader>ip",
-    "o__import__('ipdb').set_trace()<CR><Esc>"
+  "n",
+  "<leader>ip",
+  "o__import__('ipdb').set_trace()<CR><Esc>"
 )
 
 -- adds if __name__ == "__main__" in the line below
 vim.keymap.set(
-    "n",
-    "<leader>nm",
-    'oif __name__ == "__main__":<CR><Esc>"'
+  "n",
+  "<leader>nm",
+  'oif __name__ == "__main__":<CR><Esc>"'
 )
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+  vim.cmd("so")
 end)
