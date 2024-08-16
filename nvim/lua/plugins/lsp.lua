@@ -98,6 +98,28 @@ return {
               local lua_opts = lsp_zero.nvim_lua_ls()
               require("lspconfig").lua_ls.setup(lua_opts)
             end,
+
+            pylsp = function()
+              require("lspconfig").pylsp.setup{
+                settings = {
+                  pylsp = {
+                    plugins = {
+                      isort = { enabled = true },
+                      black = { enabled = true },
+                      autopep8 = { enabled = false },
+                      yapf = { enabled = false },
+
+                      pylint = {
+                        enabled = true,
+                        executable = "python $(which pylint)"
+                      },
+                      pyflakes = { enabled = false },
+                      pycodestyle = { enabled = false },
+                    }
+                  }
+                }
+              }
+            end
           }
         })
 
