@@ -16,7 +16,9 @@ return {
           "--smart-case",
           "--trim",
           "--ignore-file",
-          ".gitignore"
+          ".gitignore",
+          "--hidden",
+          "--glob=!.git/*"
         }
       }
     })
