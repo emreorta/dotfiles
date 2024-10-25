@@ -6,8 +6,8 @@ return {
     { "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
   },
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
+    { "nvim-lua/plenary.nvim", lazy = true },
+    { "MunifTanjim/nui.nvim",  lazy = true },
   },
   opts = {
     filesystem = {
