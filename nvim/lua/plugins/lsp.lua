@@ -68,7 +68,8 @@ return {
       { "williamboman/mason-lspconfig.nvim" },
       { "nvimtools/none-ls.nvim" },
       { "jay-babu/mason-null-ls.nvim" },
-      { "j-hui/fidget.nvim" }
+      { "j-hui/fidget.nvim" },
+      { "towolf/vim-helm" }
     },
     config = function()
       local lsp_zero = require("lsp-zero")
@@ -101,6 +102,14 @@ return {
 
           pyright = function()
             require("lspconfig").pyright.setup({})
+          end,
+
+          yaml_ls = function()
+            require('lspconfig').yamlls.setup {
+              settings = {
+                yaml = { schemaStore = { enable = true } },
+              }
+            }
           end,
         }
       })
