@@ -71,7 +71,7 @@ vim.keymap.set(
 vim.keymap.set(
   "n",
   "<leader>ip",
-  "o__import__('ipdb').set_trace()<CR><Esc>"
+  "o__import__('ipdb').set_trace()<Esc>"
 )
 
 -- adds if __name__ == "__main__" in the line below
