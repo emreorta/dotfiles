@@ -17,16 +17,16 @@ bind -M insert \cr _atuin_search
 string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
 
 # prevent python from creating .pyc, .pyo, and __pycache__
-set -x PYTHONDONTWRITEBYTECODE True
+set -gx PYTHONDONTWRITEBYTECODE True
+set -gx PIP_REQUIRE_VIRTUALENV True
+set -gx VIRTUALENVS_HOME "~/.virtualenvs"
+set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
 # nvim > vim
 set -gx EDITOR nvim 
 
 # NVIM_COLORSCHEME is used in ../nvim/lua/plugins/colors.lua for colorscheme
 set -gx NVIM_COLORSCHEME "nightfox"
-
-# not really needed but kind of useful to have
-set -gx VIRTUALENVS_HOME "~/.virtualenvs"
 
 # useful aliases
 alias k="kubectl"
