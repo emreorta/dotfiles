@@ -26,6 +26,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+-- copy the file contents
+vim.keymap.set({ "n", "v" }, "yaf", "<cmd>%y<CR>")
+
 -- delete stuff without resetting the buffer
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
@@ -93,9 +96,6 @@ vim.keymap.set("v", "<leader>C", "ygvgc`>p", { remap = true })
 
 -- i got tired of typing :noh
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- copy the file contents
-vim.keymap.set({ "n", "v" }, "<leader>yf", "<cmd>%y<CR>")
 
 -- send current line to `sh` and replace with the output
 vim.keymap.set("n" , "<C-s><C-s>" , ":.!sh<cr>" , { noremap = true })
