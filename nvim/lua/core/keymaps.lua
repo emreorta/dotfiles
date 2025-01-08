@@ -8,10 +8,9 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- apply the following commands but center view afterwards
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set({ "n", "v" }, "G", "Gzz")
-vim.keymap.set({ "n", "v" }, "gg", "ggzz")
+vim.keymap.set("n", "G", "Gzz")
+vim.keymap.set("n", "gg", "ggzz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -24,7 +23,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- yank whatever you want from vim and paste it elsewhere
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- copy the file contents
 vim.keymap.set({ "n", "v" }, "yaf", "<cmd>%y<CR>")
@@ -107,3 +105,4 @@ vim.keymap.set("x", "I", function() return vim.fn.mode() == "V" and "^<C-v>I" or
 -- for ergonomics
 vim.keymap.set("n", "<leader>;w", ":w<CR>")
 vim.keymap.set("n", "<leader>;q", ":q<CR>")
+vim.keymap.set("n", "<leader>;wq", ":wq<CR>")
