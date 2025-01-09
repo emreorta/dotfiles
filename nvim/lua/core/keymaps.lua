@@ -25,7 +25,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- copy the file contents
-vim.keymap.set({ "n", "v" }, "yaf", "<cmd>%y<CR>")
+vim.keymap.set("n", "yaf", "<cmd>%y<CR>")
 
 -- delete stuff without resetting the buffer
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
