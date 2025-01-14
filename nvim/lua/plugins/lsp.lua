@@ -104,12 +104,17 @@ return {
             require("lspconfig").pyright.setup({})
           end,
 
-          yaml_ls = function()
-            require('lspconfig').yamlls.setup {
+          yamlls = function()
+            require('lspconfig').yamlls.setup({
               settings = {
-                yaml = { schemaStore = { enable = true } },
+                yaml = {
+                  -- schemaStore = { enable = true },
+                  schemas = {
+                    ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                  },
+                },
               }
-            }
+            })
           end,
         }
       })
