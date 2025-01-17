@@ -30,6 +30,7 @@ return {
       local cmp = require("cmp")
       local cmp_action = lsp_zero.cmp_action()
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
       cmp.setup({
         formatting = lsp_zero.cmp_format({ details = true }),
@@ -55,6 +56,11 @@ return {
           end,
         },
       })
+
+      cmp.event:on(
+        "confirm_done",
+        cmp_autopairs.on_confirm_done()
+      )
     end
   },
 
