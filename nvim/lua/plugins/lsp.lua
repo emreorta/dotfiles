@@ -38,10 +38,10 @@ return {
           ["<C-f>"] = cmp_action.luasnip_jump_forward(),
           ["<C-b>"] = cmp_action.luasnip_jump_backward(),
 
-          ["<C-,>"] = cmp.mapping.select_prev_item(cmp_select),
-          ["<C-.>"] = cmp.mapping.select_next_item(cmp_select),
+          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
           ["<C-m>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-n>"] = cmp.mapping.complete(),
+          ["<C-,>"] = cmp.mapping.complete(),
 
           ["<Tab>"] = cmp_action.tab_complete(),
           ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
