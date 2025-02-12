@@ -32,3 +32,17 @@ set -gx ATUIN_NOBIND "true"
 atuin init fish --disable-up-arrow | source
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
+
+# abbreviations
+# git stuff
+abbr -a -- gco "git checkout"
+abbr -a -- gcob "git checkout -b"
+abbr -a -- ga "git add"
+abbr -a -- gpl "git pull"
+abbr -a -- gplo "git pull origin"
+abbr -a -- gps "git push"
+abbr -a -- gpso "git push origin"
+abbr -a -- gpst "git push --tags"
+abbr -a -- grpo "git remote prune origin"
+abbr -a -- grbi "git rebase -i HEAD~"
+abbr -a -- gbd "git branch -D"
