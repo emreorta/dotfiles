@@ -11,5 +11,5 @@ TL;DR:
 ```
 mkdir $HOME/.config
 ln -s $HOME/path/to/dotfiles/nvim $HOME/.config/nvim
-ln -s $HOME/path/to/dotfiles/tmux/tmux.conf $HOME/.config/.tmux.conf
+ln -s $HOME/path/to/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ```
