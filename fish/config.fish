@@ -2,7 +2,7 @@
 fish_add_path /opt/homebrew/bin
 
 # link python to default python3.x
-fish_add_path /opt/homebrew/opt/python/libexec/bin
+fish_add_path $(which python3)
 
 # as a safeguard to make sure that fish works within the integrated terminal of vscode
 string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
@@ -20,7 +20,6 @@ set -gx EDITOR nvim
 set -gx NVIM_COLORSCHEME "nightfox"
 
 # useful aliases
-alias k="kubectl"
 alias vim="nvim"
 
 # enable fzf and zoxide keybindings
@@ -46,3 +45,10 @@ abbr -a -- gpst "git push --tags"
 abbr -a -- grpo "git remote prune origin"
 abbr -a -- grbi "git rebase -i HEAD~"
 abbr -a -- gbd "git branch -D"
+
+# tmux stuff
+abbr -a -- tmns "tmux new -s"
+abbr -a -- tmat "tmux attach -t"
+
+# k8s stuff
+abbr -a -- k "kubectl"
