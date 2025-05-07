@@ -17,7 +17,7 @@ set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 set -gx EDITOR nvim 
 
 # NVIM_COLORSCHEME is used in ../nvim/lua/plugins/colors.lua for colorscheme
-set -gx NVIM_COLORSCHEME "nightfox"
+set -gx NVIM_COLORSCHEME "kanso-ink"
 
 # useful aliases
 alias vim="nvim"
@@ -32,6 +32,9 @@ atuin init fish --disable-up-arrow | source
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
 
+# set up pyenv
+pyenv init - fish | source
+
 # abbreviations
 # git stuff
 abbr -a -- gco "git checkout"
@@ -42,6 +45,7 @@ abbr -a -- gplo "git pull origin"
 abbr -a -- gps "git push"
 abbr -a -- gpso "git push origin"
 abbr -a -- gpst "git push --tags"
+abbr -a -- gpsf "git push --force-with-lease"
 abbr -a -- grpo "git remote prune origin"
 abbr -a -- grbi "git rebase -i HEAD~"
 abbr -a -- gbd "git branch -D"
