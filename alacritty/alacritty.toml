@@ -1,29 +1,12 @@
+[general]
+import = [
+  "~/.config/alacritty/keybindings.toml",
+  "~/.config/alacritty/themes/kanso_ink.toml",
+  # "~/.config/alacritty/themes/nightfox.toml",
+]
+
 [env]
 WINIT_X11_SCALE_FACTOR = "0.80"
-
-[colors.primary]
-background = '#192330'
-foreground = '#cdcecf'
-
-[colors.normal]
-black   = '#393b44'
-red     = '#c94f6d'
-green   = '#81b29a'
-yellow  = '#dbc074'
-blue    = '#719cd6'
-magenta = '#9d79d6'
-cyan    = '#63cdcf'
-white   = '#dfdfe0'
-
-[colors.bright]
-black   = '#575860'
-red     = '#d16983'
-green   = '#8ebaa4'
-yellow  = '#e0c989'
-blue    = '#86abdc'
-magenta = '#baa1e2'
-cyan    = '#7ad5d6'
-white   = '#e4e4e5'
 
 [cursor]
 vi_mode_style = "Block"
@@ -33,13 +16,3 @@ size = 12
 
 [font.normal]
 family = "Monaco Nerd Font Mono"
-
-[keyboard]
-bindings = [
-    { key = "Back", mods = "Alt", chars = "\u001b\u007f" }, # delete word
-    { key = "Back", mods = "command", chars = "\u0015" }, # delete line
-    { key = "Left", mods = "Command", chars = "\u001bOH", mode = "AppCursor" }, # home
-    { key = "Right", mods = "Command", chars = "\u001bOF", mode = "AppCursor" }, # end
-    { key = "Left", mods = "Alt", chars = "\u001bb" }, # skip word left
-    { key = "Right", mods = "Alt", chars = "\u001bf" }, # skip word right
-]
