@@ -48,24 +48,25 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
--- keeps the cursor position as is when yanking (e.g. yap, ya{, ya}, yip, yi{, yi})
-local cursorPreYank
-
-vim.keymap.set({ "n", "x" }, "y", function()
-    cursorPreYank = vim.api.nvim_win_get_cursor(0)
-    return "y"
-end, { expr = true })
-
-vim.keymap.set("n", "Y", function()
-    cursorPreYank = vim.api.nvim_win_get_cursor(0)
-    -- this also ignores any trailing whitespace with Y (i.e. yg_)
-    return "yg_"
-end, { expr = true })
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        if vim.v.event.operator == "y" and cursorPreYank then
-            vim.api.nvim_win_set_cursor(0, cursorPreYank)
-        end
-    end,
-})
+-- FIX: this causes the cursor jump elsewhere randomly
+-- -- keeps the cursor position as is when yanking (e.g. yap, ya{, ya}, yip, yi{, yi})
+-- local cursorPreYank
+--
+-- vim.keymap.set({ "n", "x" }, "y", function()
+--     cursorPreYank = vim.api.nvim_win_get_cursor(0)
+--     return "y"
+-- end, { expr = true })
+--
+-- vim.keymap.set("n", "Y", function()
+--     cursorPreYank = vim.api.nvim_win_get_cursor(0)
+--     -- this also ignores any trailing whitespace with Y (i.e. yg_)
+--     return "yg_"
+-- end, { expr = true })
+--
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--     callback = function()
+--         if vim.v.event.operator == "y" and cursorPreYank then
+--             vim.api.nvim_win_set_cursor(0, cursorPreYank)
+--         end
+--     end,
+-- })
