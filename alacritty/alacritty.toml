@@ -3,6 +3,7 @@ import = [
   "~/.config/alacritty/keybindings.toml",
   "~/.config/alacritty/themes/kanso_ink.toml",
   # "~/.config/alacritty/themes/nightfox.toml",
+  "~/.config/alacritty/fonts.toml",
 ]
 
 [env]
@@ -10,9 +11,3 @@ WINIT_X11_SCALE_FACTOR = "0.80"
 
 [cursor]
 vi_mode_style = "Block"
-
-[font]
-size = 12
-
-[font.normal]
-family = "Monaco Nerd Font Mono"
