@@ -4,9 +4,6 @@ fish_add_path /opt/homebrew/bin
 # link python to default python3.x
 fish_add_path $(which python3)
 
-# as a safeguard to make sure that fish works within the integrated terminal of vscode
-string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
-
 # prevent python from creating .pyc, .pyo, and __pycache__
 set -gx PYTHONDONTWRITEBYTECODE True
 set -gx PIP_REQUIRE_VIRTUALENV True
@@ -22,18 +19,16 @@ set -gx NVIM_COLORSCHEME "kanso-ink"
 # useful aliases
 alias vim="nvim"
 
-# enable fzf and zoxide keybindings
+# enable fzf, zoxide, pyenv keybindings
 fzf --fish | source
 zoxide init fish | source
+pyenv init - fish | source
 
 # enable atuin keybindings
 set -gx ATUIN_NOBIND "true"
 atuin init fish --disable-up-arrow | source
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
-
-# set up pyenv
-pyenv init - fish | source
 
 # abbreviations
 # git stuff
