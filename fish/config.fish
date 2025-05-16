@@ -6,7 +6,7 @@ fish_add_path $(which python3)
 
 # prevent python from creating .pyc, .pyo, and __pycache__
 set -gx PYTHONDONTWRITEBYTECODE True
-set -gx PIP_REQUIRE_VIRTUALENV True
+set -gx PIP_REQUIRE_VIRTUALENV False
 set -gx VIRTUALENVS_HOME "~/.virtualenvs"
 set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
