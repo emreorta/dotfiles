@@ -30,7 +30,7 @@
     autoStash = true
     updateRefs = true
 [core]
-    fsmonitor = true
+    fsmonitor = false
     untrackedCache = true
 [merge]
     conflictstyle = zdiff3 
