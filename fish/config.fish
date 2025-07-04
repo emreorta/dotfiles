@@ -35,28 +35,11 @@ bind -M insert \cr _atuin_search
 abbr -a -- gco "git checkout"
 abbr -a -- gcob "git checkout -b"
 abbr -a -- gcom "git checkout main"
-abbr -a -- ga "git add"
-abbr -a -- gpl "git pull"
 abbr -a -- gplo "git pull origin"
-abbr -a -- gps "git push"
-abbr -a -- gpso "git push origin"
-abbr -a -- gpst "git push --tags"
 abbr -a -- gpsf "git push --force-with-lease"
 abbr -a -- grpo "git remote prune origin"
 abbr -a -- grbi "git rebase -i HEAD~"
 abbr -a -- gbd "git branch -D"
 
-# tmux stuff
-abbr -a -- tmns "tmux new -s"
-abbr -a -- tmat "tmux attach -t"
-
 # k8s stuff
 abbr -a -- k "kubectl"
-abbr -a -- keit "kubectl exec -it"
-
-# docker stuff
-abbr -a -- db "docker buildx build"
-abbr -a -- dbpl "docker buildx build --platform=linux/amd64"
-abbr -a -- drm "docker rm"
-abbr -a -- dils "docker image ls"
-abbr -a -- dirm "docker image rm"
