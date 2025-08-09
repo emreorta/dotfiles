@@ -11,3 +11,6 @@ WINIT_X11_SCALE_FACTOR = "0.80"
 
 [cursor]
 vi_mode_style = "Block"
+
+[window]
+option_as_alt = "OnlyLeft"
