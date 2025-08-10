@@ -28,7 +28,6 @@ return {
   tag = "0.1.8",
   dependencies = {
     { "nvim-lua/plenary.nvim",                    lazy = true },
-    { "Myzel394/jsonfly.nvim",                    lazy = true },
     { 'nvim-telescope/telescope-fzf-native.nvim', lazy = true, build = 'make' }
   },
   config = function()
@@ -110,6 +109,5 @@ return {
     end)
 
     vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
-    vim.keymap.set("n", "<leader>j", "<cmd>Telescope jsonfly<CR>", {})
   end
 }

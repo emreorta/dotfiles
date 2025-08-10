@@ -4,7 +4,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "a8912b88ce488f411177fc8aed358b04dc246d7b" },
   "fidget.nvim": { "branch": "main", "commit": "dafd592c7bdbb6cd6d17d3c9a1a8abf3930138c1" },
   "hlargs.nvim": { "branch": "main", "commit": "ce8d705866dae44513ff48613d5e37e4da524d70" },
-  "jsonfly.nvim": { "branch": "main", "commit": "db4394d856059d99d82ea2c75d033721e9dcb1fc" },
   "kanso.nvim": { "branch": "main", "commit": "f107190b81e84c132d5755d0153944f0f1e1e380" },
   "key-analyzer.nvim": { "branch": "main", "commit": "4e4bef34498e821bcbd5203f44db8b67e4f10e04" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
