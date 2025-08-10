@@ -1,27 +1,3 @@
-local utils = {}
-
-function utils.buffer_previewer_maker(filepath, bufnr, opts)
-  local previewers = require("telescope.previewers")
-  local Job = require("plenary.job")
-
-  filepath = vim.fn.expand(filepath)
-  Job:new({
-    command = "file",
-    args = { "--mime-type", "-b", filepath },
-    on_exit = function(j)
-      local mime_type = vim.split(j:result()[1], "/")[1]
-      if mime_type == "text" then
-        previewers.buffer_previewer_maker(filepath, bufnr, opts)
-      else
-        -- just output BINARY in the preview instead
-        vim.schedule(function()
-          vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
-        end)
-      end
-    end
-  }):sync()
-end
-
 return {
   "nvim-telescope/telescope.nvim",
   event = "VeryLazy",
@@ -33,10 +9,11 @@ return {
   config = function()
     local actions = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
+    local binary_previewer = require("custom.telescope.binary-previewer")
 
     require("telescope").setup({
       defaults = {
-        buffer_previewer_maker = utils.buffer_previewer_maker,
+        buffer_previewer_maker = binary_previewer.buffer_previewer_maker,
         extensions = {
           fzf = {}
         },
@@ -111,6 +88,8 @@ return {
       builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end)
 
-    vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
+    vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+
+    require("custom.telescope.multigrep").setup()
   end
 }
