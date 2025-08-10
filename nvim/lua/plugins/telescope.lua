@@ -37,6 +37,9 @@ return {
     require("telescope").setup({
       defaults = {
         buffer_previewer_maker = utils.buffer_previewer_maker,
+        extensions = {
+          fzf = {}
+        },
         mappings = {
           i = {
             ["<C-u>"] = false,
