@@ -23,7 +23,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "gl", "$")
-vim.keymap.set("n", "gh", "0")
+vim.keymap.set("n", "gh", "^")
 
 -- repeat the last macro
 vim.keymap.set("n", ",", "@@")
