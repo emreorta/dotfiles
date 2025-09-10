@@ -48,7 +48,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-
 -- dynamic line numbers
 -- absolute numbers in insert mode, relative numbers else
 vim.api.nvim_create_autocmd(
