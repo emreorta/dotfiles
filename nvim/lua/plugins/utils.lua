@@ -14,6 +14,14 @@ return {
     opts = {}
   },
   {
-    "shortcuts/no-neck-pain.nvim", opts = { mappings = { enabled = true } }
+    "shortcuts/no-neck-pain.nvim",
+    opts = {
+      mappings = {
+        enabled = true,
+        toggleLeftSide = "<leader>nvl",
+        toggleRightSide = "<leader>nvr",
+      },
+      width = 125
+    }
   }
 }
