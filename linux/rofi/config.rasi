@@ -1,0 +1,16 @@
+configuration {
+  modes: "drun,filebrowser,calc,run,window";
+  combi-modes: "drun,filebrowser,calc";
+  show-icons: true;
+  kb-cancel: "Escape";
+  timeout {
+    action: "kb-cancel";
+    delay: 0;
+  }
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
+  }
+}
+
+@theme "/usr/share/rofi/themes/solarized.rasi"
