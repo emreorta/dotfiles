@@ -1,17 +1,14 @@
-# add fish to $PATH
-fish_add_path /opt/homebrew/bin
-
-# link python to default python3.x
+# add fish and python to $PATH
+fish_add_path $(which fish)
 fish_add_path $(which python3)
 
-# prevent python from creating .pyc, .pyo, and __pycache__
 set -gx PYTHONDONTWRITEBYTECODE True
 set -gx PIP_REQUIRE_VIRTUALENV False
-set -gx VIRTUALENVS_HOME "~/.virtualenvs"
+set -gx VIRTUALENVS_HOME $HOME/.virtualenvs
 set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
 # nvim > vim
-set -gx EDITOR nvim 
+set -gx EDITOR nvim
 
 # NVIM_COLORSCHEME is used in ../nvim/lua/plugins/colors.lua for colorscheme
 set -gx NVIM_COLORSCHEME "kanso-ink"
