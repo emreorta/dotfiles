@@ -84,7 +84,8 @@ return {
       { "nvimtools/none-ls.nvim" },
       { "jay-babu/mason-null-ls.nvim" },
       { "j-hui/fidget.nvim" },
-      { "towolf/vim-helm" }
+      { "towolf/vim-helm" },
+      { "b0o/schemastore.nvim" }
     },
     config = function()
       local lsp_zero = require("lsp-zero")
@@ -130,7 +131,11 @@ return {
             require('lspconfig').yamlls.setup({
               settings = {
                 yaml = {
-                  schemaStore = { enable = true },
+                  schemaStore = {
+                    enable = false,
+                    url = ""
+                  },
+                  schemas = require('schemastore').yaml.schemas(),
                 },
               }
             })
