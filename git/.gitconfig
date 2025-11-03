@@ -1,3 +1,6 @@
+[user]
+    name = Emre Orta
+    email = github@emreorta.com
 [init]
     defaultBranch = main
 [column]
@@ -9,6 +12,7 @@
 [diff]
     algorithm = histogram
     colorMoved = plain
+    external = difft
     mnemonicPrefix = true
     renames = true
 [push]
@@ -33,7 +37,7 @@
     fsmonitor = false
     untrackedCache = true
 [merge]
-    conflictstyle = zdiff3 
+    conflictstyle = zdiff3
 [pull]
     rebase = true
 [help]
