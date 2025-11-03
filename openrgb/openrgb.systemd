@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenRGB control
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/openrgb --startminimized --profile lights_off.orp
+User=emre
+Group=i2c
+
+[Install]
+WantedBy=multi-user.target
