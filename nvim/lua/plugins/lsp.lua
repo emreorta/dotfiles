@@ -128,14 +128,14 @@ return {
           end,
 
           yamlls = function()
-            require('lspconfig').yamlls.setup({
+            require("lspconfig").yamlls.setup({
               settings = {
                 yaml = {
                   schemaStore = {
                     enable = false,
                     url = ""
                   },
-                  schemas = require('schemastore').yaml.schemas(),
+                  schemas = require("schemastore").yaml.schemas(),
                 },
               }
             })
