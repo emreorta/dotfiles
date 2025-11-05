@@ -1,8 +1,8 @@
 [general]
 import = [
   "~/.config/alacritty/keybindings.toml",
-  "~/.config/alacritty/themes/kanso_ink.toml",
   "~/.config/alacritty/fonts.toml",
+  "~/.config/alacritty/themes/no_clown_fiesta_dark.toml",
 ]
 
 [cursor]

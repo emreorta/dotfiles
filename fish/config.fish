@@ -11,7 +11,7 @@ set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 set -gx EDITOR nvim
 
 # NVIM_COLORSCHEME is used in ../nvim/lua/plugins/colors.lua for colorscheme
-set -gx NVIM_COLORSCHEME "kanso-ink"
+set -gx NVIM_COLORSCHEME "no-clown-fiesta-dark"
 
 # enable fzf, zoxide, pyenv keybindings
 fzf --fish | source
