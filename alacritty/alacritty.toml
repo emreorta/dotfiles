@@ -2,7 +2,7 @@
 import = [
   "~/.config/alacritty/keybindings.toml",
   "~/.config/alacritty/fonts.toml",
-  "~/.config/alacritty/themes/no_clown_fiesta_dark.toml",
+  "~/.config/alacritty/themes/no-clown-fiesta-dark.toml",
 ]
 
 [cursor]
@@ -10,3 +10,6 @@ vi_mode_style = "Block"
 
 [window]
 option_as_alt = "OnlyLeft"
+
+[env]
+live_config_reload = "true"
