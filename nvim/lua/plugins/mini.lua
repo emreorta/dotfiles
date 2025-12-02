@@ -1,8 +1,8 @@
 return {
-  { "echasnovski/mini.ai",      version = false, opts = {} },
-  { "echasnovski/mini.comment", version = false, opts = {} },
+  { "nvim-mini/mini.ai",      version = false, opts = {} },
+  { "nvim-mini/mini.comment", version = false, opts = {} },
   {
-    "echasnovski/mini.files",
+    "nvim-mini/mini.files",
     version = false,
     opts = {},
     keys = {
