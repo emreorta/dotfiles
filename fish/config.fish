@@ -7,6 +7,8 @@ set -gx PIP_REQUIRE_VIRTUALENV False
 set -gx VIRTUALENVS_HOME $HOME/.virtualenvs
 set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
+set -gx MOZ_ENABLE_WAYLAND 0
+
 # nvim > vim
 set -gx EDITOR nvim
 
