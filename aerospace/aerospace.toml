@@ -1,4 +1,4 @@
-start-at-login = false
+start-at-login = true
 after-startup-command = []
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
