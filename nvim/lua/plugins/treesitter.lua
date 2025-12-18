@@ -2,6 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   dependencies = { "nvim-treesitter/nvim-treesitter-context" },
+  branch = "master",
   main = "nvim-treesitter.configs",
   opts = {
     auto_install = { enable = true },
