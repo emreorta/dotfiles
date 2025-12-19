@@ -178,5 +178,9 @@ automatically-unhide-macos-hidden-apps = true
   run = ["move-node-to-workspace T"]
 
 [[on-window-detected]]
+  if.app-name-regex-substring = "Todoist"
+  run = ["move-node-to-workspace T"]
+
+[[on-window-detected]]
   if.app-name-regex-substring = "Spotify"
   run = ["move-node-to-workspace Y"]
