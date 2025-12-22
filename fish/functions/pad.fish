@@ -19,27 +19,27 @@ function pad -d "Add padding to windows in Aerospace"
           pad -r                Reset padding to 0 on all monitors. Equivalent to `pad`.
           pad                   Reset padding to 0 on all monitors. Equivalent to `pad --reset`.
         "
-      return 0
+        return 0
     end
 
     if set -ql _flag_width
-      set width $argv[1]
+        set width $argv[1]
     else
-      set width 0
+        set width 0
     end
 
     if set -ql _flag_monitor
-      set monitor $argv[2]
+        set monitor $argv[2]
     else
-      set monitor "main"
+        set monitor main
     end
 
     if test (count $argv) -eq 0
-      set padding 0
+        set padding 0
     else if set -ql _flag_reset
-      set padding 0
+        set padding 0
     else
-      set padding "[{ monitor.\"$monitor\" = $width }, 0]"
+        set padding "[{ monitor.\"$monitor\" = $width }, 0]"
     end
 
     sed -i '' "s/^\([[:space:]]*outer\.left = \).*/\1$padding/; s/^\([[:space:]]*outer\.right = \).*/\1$padding/" ~/dev/dotfiles/aerospace/aerospace.toml
