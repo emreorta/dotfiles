@@ -1,4 +1,5 @@
 abbr -a -- k "kubectl"
+abbr -a -- kk "kubectl krew"
 abbr -a -- vim "nvim"
 abbr -a -- du "dust"
 abbr -a -- find "fd"
