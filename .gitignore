@@ -1,4 +1,3 @@
-fish/functions/*_*.fish
 fish/functions/nvm.fish
 fish/functions/fisher.fish
 fish/fish_variables
