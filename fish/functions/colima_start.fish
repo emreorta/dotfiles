@@ -18,23 +18,23 @@ function colima_start -d "Start colima with a custom resource config"
         return 0
     end
 
-    if -set -ql _flag_cpu
+    if set -ql _flag_cpu
         set cpu $argv[1]
     else
         set cpu 8
     end
 
-    if -set -ql _flag_memory
+    if set -ql _flag_memory
         set memory $argv[1]
     else
         set memory 16
     end
 
-    if -set -ql _flag_disk
+    if set -ql _flag_disk
         set disk $argv[1]
     else
         set disk 120
     end
 
-    colima start --arch aarch64 --vm-type=vz --vz-rosetta --cpu $cpu --memory $memory --disk $disk
+    colima start --arch aarch64 --vm-type vz --vz-rosetta --cpu $cpu --memory $memory --disk $disk
 end
