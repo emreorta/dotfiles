@@ -39,10 +39,12 @@ vim.g.python3_host_prog = os.getenv("VIRTUALENVS_HOME") .. "/neovim/bin/python"
 
 vim.opt.jumpoptions = "view"
 
-vim.opt.foldlevelstart = 99
+vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 8
 vim.opt.foldcolumn = "1"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
 
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
