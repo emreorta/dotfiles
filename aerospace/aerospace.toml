@@ -136,7 +136,8 @@ automatically-unhide-macos-hidden-apps = true
 
   # toggle padding for a given width and monitor. here, it defaults to 900 width and `main` monitor.
   # `pad` is a custom fish function that overrides `outer.left` and `outer.right`.
-  alt-backtick = "exec-and-forget fish -c 'pad -w 900 -m main'"
+  # in other words, a lower number makes the padded window bigger and vice versa.
+  alt-backtick = "exec-and-forget fish -c 'pad -w 850 -m main'"
   alt-shift-backtick = "exec-and-forget fish -c 'pad -r'"
 
 [mode.service.binding]
