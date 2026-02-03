@@ -163,7 +163,7 @@ automatically-unhide-macos-hidden-apps = true
   run = ["move-node-to-workspace F"]
 
 [[on-window-detected]]
-  if.app-name-regex-substring = "Telegram|Whatsapp"
+  if.app-name-regex-substring = "Telegram|Whatsapp|Signal"
   run = ["move-node-to-workspace G"]
 
 [[on-window-detected]]
