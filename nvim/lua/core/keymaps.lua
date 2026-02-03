@@ -117,3 +117,6 @@ vim.keymap.set("x", "I", function() return vim.fn.mode() == "V" and "^<C-v>I" or
 -- for ergonomics
 vim.keymap.set("n", "<leader>;w", ":w<CR>")
 vim.keymap.set("n", "<leader>;q", ":q<CR>")
+
+-- delete all buffers except current one
+vim.keymap.set("n", "<leader>bd", ":bd|e#<CR>")
