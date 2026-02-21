@@ -49,7 +49,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 
 -- format the code using lsp
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format)
 
 -- replace the word under cursor globally
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
@@ -108,7 +108,7 @@ vim.keymap.set("v", "<leader>C", "ygvgc`>p", { remap = true })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- send current line to `sh` and replace with the output
-vim.keymap.set("n" , "<C-s><C-s>" , ":.!sh<cr>" , { noremap = true })
+vim.keymap.set("n", "<C-s><C-s>", ":.!sh<cr>", { noremap = true })
 
 -- block insert in line visual mode
 vim.keymap.set("x", "A", function() return vim.fn.mode() == "V" and "$<C-v>A" or "A" end, { expr = true })
