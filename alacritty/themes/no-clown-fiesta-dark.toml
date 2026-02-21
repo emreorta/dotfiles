@@ -1,29 +1,29 @@
 # no-clown-fiesta-dark theme
 
 [colors.primary]
-background = '#151515'
-foreground = '#E1E1E1'
+background = "#151515"
+foreground = "#E1E1E1"
 
 [colors.normal]
-black	=   '#151515'
-red     =     '#b46958'
-green	=   '#90A959'
-yellow	=  '#F4BF75'
-blue	=    '#BAD7FF'
-magenta	= '#AA759F'
-cyan	=    '#88afa2'
-white	=   '#AFAFAF'
+black = "#151515"
+red = "#b46958"
+green = "#90A959"
+yellow = "#F4BF75"
+blue = "#BAD7FF"
+magenta = "#AA759F"
+cyan = "#88afa2"
+white = "#AFAFAF"
 
 [colors.bright]
-black	=   '#373737'
-red	    =     '#984936'
-green	=   '#586935'
-yellow	=  '#ab8550'
-blue	=    '#A2B5C1'
-magenta	= '#AA749F'
-cyan	=    '#7E97AB'
-white	=   '#E1E1E1'
+black = "#373737"
+red = "#984936"
+green = "#586935"
+yellow = "#ab8550"
+blue = "#A2B5C1"
+magenta = "#AA749F"
+cyan = "#7E97AB"
+white = "#E1E1E1"
 
 [colors.cursor]
-text	= '#151515'
-cursor	= '#D0D0D0'
+text = "#151515"
+cursor = "#D0D0D0"
