@@ -11,6 +11,7 @@ configuration {
     directories-first: true;
     sorting-method: "name";
   }
+  display: "x11";
 }
 
 @theme "/usr/share/rofi/themes/solarized.rasi"
