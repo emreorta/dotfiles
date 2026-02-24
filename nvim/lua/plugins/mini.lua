@@ -1,6 +1,7 @@
 return {
-  { "nvim-mini/mini.ai",      version = false, opts = {} },
+  { "nvim-mini/mini.ai", version = false, opts = {} },
   { "nvim-mini/mini.comment", version = false, opts = {} },
+  { "nvim-mini/mini.splitjoin", version = false, opts = {} },
   {
     "nvim-mini/mini.files",
     version = false,
