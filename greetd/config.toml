@@ -1,0 +1,6 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet --time --remember --cmd startplasma-wayland --theme border=gray;text=white;prompt=white;time=white;action=white;button=white;container=gray;input=white"
+user = "greeter"
