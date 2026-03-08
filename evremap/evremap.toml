@@ -1,0 +1,36 @@
+device_name = "MosArt Varmilo Keyboard"
+
+# seems like dual_role expects remapped keys here, so using KEY_LEFTALT
+# actually triggers KEY_LEFTCTRL since it's remapped that way below
+[[dual_role]]
+input = "KEY_CAPSLOCK"
+hold = ["KEY_LEFTALT"]
+tap = ["KEY_ESC"]
+
+[[remap]]
+input = ["KEY_LEFTALT"]
+output = ["KEY_LEFTCTRL"]
+
+[[remap]]
+input = ["KEY_LEFTMETA"]
+output = ["KEY_LEFTALT"]
+
+[[remap]]
+input = ["KEY_LEFTCTRL"]
+output = ["KEY_LEFTMETA"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_H"]
+output = ["KEY_LEFT"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_J"]
+output = ["KEY_DOWN"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_K"]
+output = ["KEY_UP"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_L"]
+output = ["KEY_RIGHT"]
