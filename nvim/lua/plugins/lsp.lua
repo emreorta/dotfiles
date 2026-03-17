@@ -163,12 +163,12 @@ return {
       })
 
       vim.diagnostic.config({
-        virtual_text = true,
-        signs = true,
-        update_in_insert = false,
-        underline = true,
-        severity_sort = false,
         float = true,
+        underline = true,
+        update_in_insert = false,
+        virtual_text = { current_line = true },
+        signs = true,
+        severity_sort = false,
       })
     end,
   }
