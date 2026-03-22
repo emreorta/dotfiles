@@ -30,9 +30,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "88"
+vim.opt.colorcolumn = "80"
 
-vim.opt.wrap = false
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0
+vim.opt.wrap = true
 vim.opt.linebreak = true
 
 vim.g.python3_host_prog = os.getenv("VIRTUALENVS_HOME") .. "/neovim/bin/python"
