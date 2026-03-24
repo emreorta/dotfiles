@@ -1,15 +1,5 @@
 return {
   {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
-    lazy = true,
-    config = false,
-    init = function()
-      vim.g.lsp_zero_extend_cmp = 0
-      vim.g.lsp_zero_extend_lspconfig = 0
-    end,
-  },
-  {
     "mason-org/mason.nvim",
     lazy = false,
     config = true,
@@ -18,148 +8,82 @@ return {
         icons = {
           package_installed = "✓",
           package_pending = "➜",
-          package_uninstalled = "✗"
-        }
-      }
-    }
-  },
-  { "onsails/lspkind.nvim" },
-
-  -- Autocompletion
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      { "L3MON4D3/LuaSnip" },
-    },
-    config = function()
-      local lsp_zero = require("lsp-zero")
-      lsp_zero.extend_cmp()
-
-      local cmp = require("cmp")
-      local cmp_action = lsp_zero.cmp_action()
-      local cmp_select = { behavior = cmp.SelectBehavior.Select }
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
-      cmp.setup({
-        formatting = lsp_zero.cmp_format({ details = true }),
-        mapping = cmp.mapping.preset.insert({
-          ["<C-f>"] = cmp_action.luasnip_jump_forward(),
-          ["<C-b>"] = cmp_action.luasnip_jump_backward(),
-
-          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-          ["<C-m>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-,>"] = cmp.mapping.complete(),
-
-          ["<Tab>"] = cmp_action.tab_complete(),
-          ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
-
-          -- scroll through the documentation windows
-          ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        }),
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+          package_uninstalled = "✗",
         },
-      })
-
-      cmp.event:on(
-        "confirm_done",
-        cmp_autopairs.on_confirm_done()
-      )
-    end
+      },
+    },
   },
 
-  -- LSP
   {
     "neovim/nvim-lspconfig",
     cmd = { "LspInfo", "LspInstall", "LspStart" },
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "williamboman/mason-lspconfig.nvim" },
-      { "nvimtools/none-ls.nvim" },
-      { "jay-babu/mason-null-ls.nvim" },
+      { "mason-org/mason-lspconfig.nvim" },
+      { "folke/lazydev.nvim", ft = "lua", opts = {} },
+      { "qvalentin/helm-ls.nvim", ft = "helm" },
+      { "b0o/schemastore.nvim" },
       { "j-hui/fidget.nvim" },
-      { "towolf/vim-helm" },
-      { "b0o/schemastore.nvim" }
     },
     config = function()
-      local lsp_zero = require("lsp-zero")
-      lsp_zero.extend_lspconfig()
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local bufnr = args.buf
+          local opts = { buffer = bufnr, remap = false }
 
-      lsp_zero.on_attach(function(_, bufnr)
-        lsp_zero.default_keymaps({ buffer = bufnr })
-
-        local opts = { buffer = bufnr, remap = false }
-        vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "H", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "<leader>od", vim.diagnostic.open_float, opts)
-        vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>rf", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<C-g>", vim.lsp.buf.signature_help, opts)
-      end)
+          vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "<leader>od", vim.diagnostic.open_float, opts)
+          vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+          vim.keymap.set("n", "<leader>rf", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format)
+          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+          vim.keymap.set("n", "<C-g>", vim.lsp.buf.signature_help, opts)
+          vim.keymap.set("n", "]d", function()
+            vim.diagnostic.jump({ count = 1, float = true })
+          end, opts)
+          vim.keymap.set("n", "[d", function()
+            vim.diagnostic.jump({ count = -1, float = true })
+          end, opts)
+        end,
+      })
 
       require("fidget").setup({})
       require("mason-lspconfig").setup({
         ensure_installed = {},
         handlers = {
-          lsp_zero.default_setup,
-          lua_ls = function()
-            require("lspconfig").lua_ls.setup {
-              settings = {
-                Lua = {
-                  diagnostics = {
-                    globals = { "vim" }
-                  }
-                }
-              }
-            }
-          end,
-
-          pyright = function()
-            require("lspconfig").pyright.setup({})
-          end,
-
-          yamlls = function()
-            require("lspconfig").yamlls.setup({
-              settings = {
-                yaml = {
-                  schemaStore = {
-                    enable = false,
-                    url = ""
-                  },
-                  schemas = require("schemastore").yaml.schemas(),
+          vim.lsp.config("yamlls", {
+            settings = {
+              yaml = {
+                schemaStore = {
+                  enable = false,
+                  url = "",
                 },
-              }
-            })
-          end,
-        }
-      })
+                schemas = require("schemastore").yaml.schemas(),
+              },
+            },
+          }),
 
-      -- lsp doesn't work for the following for some reason
-      require("mason-null-ls").setup({
-        ensure_installed = {
-          "black",
-          "prettier",
-          "yamlfmt"
-        }
-      })
+          vim.lsp.config("helm_ls", {
+            settings = {
+              ["helm-ls"] = {
+                yamlls = {
+                  path = "yaml-language-server",
+                },
+              },
+            },
+          }),
 
-      local null_ls = require("null-ls")
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.black,
-          null_ls.builtins.formatting.isort,
-          null_ls.builtins.formatting.prettier,
-          null_ls.builtins.formatting.yamlfmt
-        }
+          vim.lsp.config("ruff", {
+            init_options = {
+              settings = {
+                configurationPreference = "filesystemFirst",
+                showSyntaxErrors = false,
+              },
+            },
+          }),
+        },
       })
 
       vim.diagnostic.config({
@@ -171,5 +95,5 @@ return {
         severity_sort = false,
       })
     end,
-  }
+  },
 }
