@@ -48,9 +48,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- disable Q
 vim.keymap.set("n", "Q", "<nop>")
 
--- format the code using lsp
-vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format)
-
 -- replace the word under cursor globally
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 
