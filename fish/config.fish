@@ -11,6 +11,7 @@ set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 # disable auto updates in homebrew
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
 
+# set alacritty as the default terminal
 set -gx TERMINAL alacritty
 
 # nvim > vim
