@@ -8,9 +8,6 @@ set -gx PIP_REQUIRE_VIRTUALENV False
 set -gx VIRTUALENVS_HOME $HOME/.virtualenvs
 set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
-# force firefox to use x11 instead
-set -gx MOZ_ENABLE_WAYLAND 0
-
 # disable auto updates in homebrew
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
 
