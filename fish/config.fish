@@ -11,6 +11,9 @@ set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 # force firefox to use x11 instead
 set -gx MOZ_ENABLE_WAYLAND 0
 
+# disable auto updates in homebrew
+set -gx HOMEBREW_NO_AUTO_UPDATE 1
+
 set -gx TERMINAL alacritty
 
 # nvim > vim
