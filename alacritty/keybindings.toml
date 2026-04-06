@@ -6,4 +6,5 @@ bindings = [
     { key = "Right", mods = "Command", chars = "\u001bOF", mode = "AppCursor" }, # end
     { key = "Left", mods = "Alt", chars = "\u001bb" }, # skip word left
     { key = "Right", mods = "Alt", chars = "\u001bf" }, # skip word right
+    { key = "Return", mods = "Shift", chars = "\u001B\r" }, # new line
 ]
