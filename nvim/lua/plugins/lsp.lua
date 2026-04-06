@@ -53,36 +53,13 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {},
         handlers = {
-          vim.lsp.config("yamlls", {
-            settings = {
-              yaml = {
-                schemaStore = {
-                  enable = false,
-                  url = "",
-                },
-                schemas = require("schemastore").yaml.schemas(),
-              },
-            },
-          }),
+          function ()
+            local servers = require("config.lsp.servers")
 
-          vim.lsp.config("helm_ls", {
-            settings = {
-              ["helm-ls"] = {
-                yamlls = {
-                  path = "yaml-language-server",
-                },
-              },
-            },
-          }),
-
-          vim.lsp.config("ruff", {
-            init_options = {
-              settings = {
-                configurationPreference = "filesystemFirst",
-                showSyntaxErrors = false,
-              },
-            },
-          }),
+            for server, config in pairs(servers) do
+              vim.lsp.config(server, config or {})
+            end
+          end
         },
       })
 
