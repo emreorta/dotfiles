@@ -1,7 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   event = "VeryLazy",
-  tag = "0.1.8",
+  version = "*",
   dependencies = {
     { "nvim-lua/plenary.nvim",                    lazy = true },
     { "nvim-telescope/telescope-fzf-native.nvim", lazy = true, build = "make" },
