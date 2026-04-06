@@ -23,5 +23,13 @@ return {
       },
       width = 125
     }
-  }
+  },
+  {
+    "j-hui/fidget.nvim",
+    opts = {
+      notification = {
+        override_vim_notify = true,
+      }
+    },
+  },
 }

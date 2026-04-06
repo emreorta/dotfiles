@@ -4,7 +4,7 @@ return {
   tag = "0.1.8",
   dependencies = {
     { "nvim-lua/plenary.nvim",                    lazy = true },
-    { 'nvim-telescope/telescope-fzf-native.nvim', lazy = true, build = 'make' }
+    { "nvim-telescope/telescope-fzf-native.nvim", lazy = true, build = "make" },
   },
   config = function()
     local actions = require("telescope.actions")
@@ -62,6 +62,7 @@ return {
     })
 
     require("telescope").load_extension("fzf")
+    require("telescope").load_extension("fidget")
 
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff",
@@ -89,6 +90,9 @@ return {
     end)
 
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+
+    local fidget = require("telescope").extensions.fidget
+    vim.keymap.set("n", "<leader>fd", function() fidget.fidget() end, {})
 
     require("custom.telescope.multigrep").setup()
   end

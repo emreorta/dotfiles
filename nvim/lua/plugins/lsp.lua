@@ -23,7 +23,6 @@ return {
       { "folke/lazydev.nvim", ft = "lua", opts = {} },
       { "qvalentin/helm-ls.nvim", ft = "helm" },
       { "b0o/schemastore.nvim" },
-      { "j-hui/fidget.nvim" },
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -49,7 +48,6 @@ return {
         end,
       })
 
-      require("fidget").setup({})
       require("mason-lspconfig").setup({
         ensure_installed = {},
         handlers = {
