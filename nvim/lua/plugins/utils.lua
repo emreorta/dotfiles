@@ -1,17 +1,16 @@
 return {
   -- can't use opts with these
-  { "christoomey/vim-tmux-navigator" },
   { "tpope/vim-repeat" },
   { "mbbill/undotree" },
 
-  { "m-demare/hlargs.nvim",          opts = {} },
-  { "petertriho/nvim-scrollbar",     opts = {} },
-  { "meznaric/key-analyzer.nvim",    opts = {} },
+  { "m-demare/hlargs.nvim", opts = {} },
+  { "petertriho/nvim-scrollbar", opts = {} },
+  { "meznaric/key-analyzer.nvim", opts = {} },
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = true,
-    opts = {}
+    opts = {},
   },
   {
     "shortcuts/no-neck-pain.nvim",
@@ -30,6 +29,24 @@ return {
       notification = {
         override_vim_notify = true,
       }
+    }
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+      "TmuxNavigatorProcessList",
+    },
+    keys = {
+      { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
 }
