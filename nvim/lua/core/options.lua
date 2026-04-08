@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25-Cursor-blinkon250,r-cr-o:hor20"
 
 vim.opt.number = true
