@@ -11,11 +11,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- uses treesitter for folding if there's a parser available for that language
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
-    if require("nvim-treesitter.parsers").has_parser() then
-      vim.opt.foldmethod = "expr"
-      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+    if pcall(vim.treesitter.get_parser) then
+      vim.wo[0][0].foldmethod = "expr"
+      vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
     else
-      vim.opt.foldmethod = "syntax"
+      vim.wo[0][0].foldmethod = "syntax"
     end
   end,
 })
