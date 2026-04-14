@@ -6,6 +6,7 @@ return {
   { "m-demare/hlargs.nvim", opts = {} },
   { "petertriho/nvim-scrollbar", opts = {} },
   { "meznaric/key-analyzer.nvim", opts = {} },
+  { "nvim-tree/nvim-web-devicons", opts = {} },
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
