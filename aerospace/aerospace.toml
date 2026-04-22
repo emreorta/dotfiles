@@ -159,7 +159,7 @@ automatically-unhide-macos-hidden-apps = true
 
 # move certain apps to their own workspaces upon launch
 [[on-window-detected]]
-  if.app-name-regex-substring = "Firefox"
+  if.app-name-regex-substring = "Firefox|Helium"
   run = ["move-node-to-workspace F"]
 
 [[on-window-detected]]
