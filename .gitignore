@@ -1,3 +1,4 @@
 fish/functions/nvm.fish
 fish/functions/fisher.fish
 fish/fish_variables
+fish/conf.d/private-*.fish
