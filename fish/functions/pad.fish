@@ -1,9 +1,9 @@
 function pad -d "Add padding to windows in Aerospace"
-    argparse h/help w/width m/monitor r/reset -- $argv
+    argparse h/help w/width= m/monitor= r/reset -- $argv
     or return
 
     if set -ql _flag_help
-        echo "Usage: pad [-h|--help] [-w|--with INTEGER] [-m|--monitor STRING] [-r|--reset]
+        echo "Usage: pad [-h|--help] [-w|--width INTEGER] [-m|--monitor STRING] [-r|--reset]
 
         Add padding to windows in Aerospace.
 
@@ -23,13 +23,13 @@ function pad -d "Add padding to windows in Aerospace"
     end
 
     if set -ql _flag_width
-        set width $argv[1]
+        set width $_flag_width
     else
         set width 0
     end
 
     if set -ql _flag_monitor
-        set monitor $argv[2]
+        set monitor $_flag_monitor
     else
         set monitor main
     end
