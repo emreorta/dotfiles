@@ -1,0 +1,48 @@
+### base taskwarrior config
+data.location=~/.task
+hooks.location=~/.task/hooks
+
+### udas
+# tasksh specific
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
+
+### reports
+# today's tasks
+report.today.description=Today's tasks
+report.today.columns=id,project,priority,start.active,urgency,due,description.desc,tags
+report.today.labels=ID,Project,Priority,Active,Urgency,Due,Description,Tags
+report.today.filter=status:pending -BLOCKED -review and ( ( proj: and ( ( prio:H and due: ) or due.before:tomorrow or +respond or +today or +next or +inprogress or +yesterday) ) or +daytime )
+report.today.sort=urgency-
+
+# active tasks
+report.active.description=Active tasks
+report.active.columns=id,project,description.desc,tags
+report.active.labels=ID,Project,Description,Tags
+report.active.filter=status:pending +ACTIVE
+report.active.sort=urgency-
+
+# personal todos
+report.triage.description=Personal todos
+report.triage.columns=id,priority,start.active,urgency,due,description.desc,tags
+report.triage.labels=ID,Priority,Active,Urgency,Due,Description,Tags
+report.triage.filter=( proj: or proj:Life ) ( due.before:tomorrow or due: ) status:pending -WAITING
+report.triage.sort=urgency-
+
+# someday
+report.someday.description=Tasks I might do someday
+report.someday.columns=id,project,priority,start.active,urgency,description.desc,tags
+report.someday.labels=ID,Project,Priority,Active,Urgency,Description,Tags
+report.someday.filter=status:pending -WAITING +someday
+report.someday.sort=urgency-
+
+### urgency config
+urgency.annotations.coefficient=0
+urgency.user.tag.focus.coefficient=10
+urgency.user.tag.someday.coefficient=-2
+urgency.due.coefficient=0.5 # makes recurring tasks less urgent before they're due
+
