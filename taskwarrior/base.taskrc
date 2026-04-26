@@ -52,4 +52,6 @@ urgency.user.tag.fix.coefficient=8
 urgency.user.tag.focus.coefficient=8
 urgency.user.tag.someday.coefficient=-2
 
+# disable prompting for news
+news.version=10.0.0
 
