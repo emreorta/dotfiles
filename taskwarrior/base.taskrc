@@ -37,8 +37,8 @@ report.triage.sort=urgency-
 
 # someday
 report.someday.description=Tasks I might do someday
-report.someday.columns=id,project,priority,start.active,urgency,description.desc,tags
-report.someday.labels=ID,Project,Priority,Active,Urgency,Description,Tags
+report.someday.columns=id,project,urgency,description.desc,tags
+report.someday.labels=ID,Project,Urgency,Description,Tags
 report.someday.filter=status:pending -WAITING +someday
 report.someday.sort=urgency-
 
