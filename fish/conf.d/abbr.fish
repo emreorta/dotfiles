@@ -3,7 +3,12 @@ abbr -a -- kk "kubectl krew"
 abbr -a -- vim "nvim"
 abbr -a -- du "dust"
 abbr -a -- find "fd"
+
+# taskwarrior stuff
 abbr -a -- tt "taskwarrior-tui"
+abbr -a -- t "task"
+abbr -a -- ts "task sync"
+abbr -a -- ta "task add"
 
 # git stuff
 abbr -a -- gco "git checkout"
