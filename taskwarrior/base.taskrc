@@ -3,13 +3,15 @@ data.location=~/.task
 hooks.location=~/.task/hooks
 
 ### udas
-# tasksh specific
+# tasksh
 uda.reviewed.type=date
 uda.reviewed.label=Reviewed
 report._reviewed.description=Tasksh review report
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
+
+# taskwarrior-tui
 
 ### reports
 # today's tasks
@@ -41,8 +43,13 @@ report.someday.filter=status:pending -WAITING +someday
 report.someday.sort=urgency-
 
 ### urgency config
+# presence of tags and annotations shouldn't change the urgency
 urgency.annotations.coefficient=0
-urgency.user.tag.focus.coefficient=10
+urgency.tags.coefficient=0
+
+# assign specific values for certain tags
+urgency.user.tag.fix.coefficient=8
+urgency.user.tag.focus.coefficient=8
 urgency.user.tag.someday.coefficient=-2
-urgency.due.coefficient=0.5 # makes recurring tasks less urgent before they're due
+
 
