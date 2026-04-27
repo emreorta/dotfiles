@@ -34,9 +34,7 @@ function pad -d "Add padding to windows in Aerospace"
         set monitor main
     end
 
-    if test (count $argv) -eq 0
-        set padding 0
-    else if set -ql _flag_reset
+    if set -ql _flag_reset
         set padding 0
     else
         set padding "[{ monitor.\"$monitor\" = $width }, 0]"
