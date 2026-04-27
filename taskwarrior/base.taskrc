@@ -32,7 +32,7 @@ report.active.sort=urgency-
 report.triage.description=Personal todos
 report.triage.columns=id,priority,start.active,urgency,due,description.desc,tags
 report.triage.labels=ID,Priority,Active,Urgency,Due,Description,Tags
-report.triage.filter=( proj: or proj:Life ) ( due.before:tomorrow or due: ) status:pending -WAITING
+report.triage.filter=( proj: or proj:Life ) ( due.before:tomorrow or due: ) status:pending -WAITING -someday
 report.triage.sort=urgency-
 
 # someday
