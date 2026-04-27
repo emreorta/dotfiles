@@ -18,7 +18,7 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +P
 report.today.description=Today's tasks
 report.today.columns=id,project,priority,start.active,urgency,due,description.desc,tags
 report.today.labels=ID,Project,Priority,Active,Urgency,Due,Description,Tags
-report.today.filter=status:pending -BLOCKED -review and ( ( proj: and ( ( prio:H and due: ) or due.before:tomorrow or +respond or +today or +next or +inprogress or +yesterday) ) or +daytime )
+report.today.filter=status:pending -BLOCKED and ( scheduled:today or due:today or due.before:tomorrow ) or +next and -COMPLETED
 report.today.sort=urgency-
 
 # active tasks
