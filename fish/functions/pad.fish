@@ -1,9 +1,9 @@
 function pad -d "Add padding to windows in Aerospace"
-    argparse h/help w/width= m/monitor= r/reset -- $argv
+    argparse h/help w/width= m/monitor= c/config= r/reset -- $argv
     or return
 
     if set -ql _flag_help
-        echo "Usage: pad [-h|--help] [-w|--width INTEGER] [-m|--monitor STRING] [-r|--reset]
+        echo "Usage: pad [-h|--help] [-w|--width INTEGER] [-m|--monitor STRING] [-c|--config STRING] [-r|--reset]
 
         Add padding to windows in Aerospace.
 
@@ -11,6 +11,7 @@ function pad -d "Add padding to windows in Aerospace"
           -h, --help            Show this help message and exit.
           -w, --width INTEGER   Set the padding width (default: 0).
           -m, --monitor STRING  Specify which monitor to apply padding to (default: main).
+          -c, --config STRING   Specify path to the configuration file (default: ~/.config/aerospace/aerospace.toml).
           -r, --reset           Reset padding to 0 (overrides other flags).
 
         Examples:
@@ -34,12 +35,18 @@ function pad -d "Add padding to windows in Aerospace"
         set monitor main
     end
 
+    if set -ql _flag_config
+        set config $_flag_config
+    else
+        set config ~/.config/aerospace/aerospace.toml
+    end
+
     if set -ql _flag_reset
         set padding 0
     else
         set padding "[{ monitor.\"$monitor\" = $width }, 0]"
     end
 
-    sed -i '' "s/^\([[:space:]]*outer\.left = \).*/\1$padding/; s/^\([[:space:]]*outer\.right = \).*/\1$padding/" ~/dev/dotfiles/aerospace/aerospace.toml
+    sed -i '' "s/^\([[:space:]]*outer\.left = \).*/\1$padding/; s/^\([[:space:]]*outer\.right = \).*/\1$padding/" $config
     aerospace reload-config
 end
