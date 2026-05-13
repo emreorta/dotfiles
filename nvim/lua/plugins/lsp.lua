@@ -30,7 +30,6 @@ return {
           local bufnr = args.buf
           local opts = { buffer = bufnr, remap = false }
 
-          vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "<leader>od", vim.diagnostic.open_float, opts)
           vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
