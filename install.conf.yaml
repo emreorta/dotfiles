@@ -6,25 +6,41 @@
 - clean: ["~"]
 
 - link:
-    ~/.tmux.conf: tmux/.tmux.conf
-    ~/.gitconfig: git/.gitconfig
+    # cross-platform config
     ~/.bashrc: bash/.bashrc
-    ~/.config/aerospace:
-      if: "[ $(uname) = Darwin ]" 
-      glob: true
-      path: aerospace/*
+    ~/.gitconfig: git/.gitconfig
+    ~/.tmux.conf: tmux/.tmux.conf
+
     ~/.config/alacritty:
       glob: true
       path: alacritty/*
+
     ~/.config/atuin:
       glob: true
       path: atuin/*
+
     ~/.config/fish:
       glob: true
       path: fish/*
+
     ~/.config/nvim:
       glob: true
       path: nvim/*
+
+    # macos specific config
+    ~/.config/aerospace:
+      if: "[ $(uname) = Darwin ]"
+      glob: true
+      path: aerospace/*
+
+    # ~/.config/karabiner/karabiner.json:
+    #   if: "[ $(uname) = Darwin ]"
+    #   path: karabiner/karabiner.json
+
+    # linux specific config
+    ~/.config/fuzzel/fuzzel.ini:
+      if: "[ $(uname) = Linux ]"
+      path: fuzzel/fuzzel.ini
 
 # - shell:
 #   - chsh -s $(which fish)
