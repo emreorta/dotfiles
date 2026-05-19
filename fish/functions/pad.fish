@@ -47,6 +47,7 @@ function pad -d "Add padding to windows in Aerospace"
         set padding "[{ monitor.\"$monitor\" = $width }, 0]"
     end
 
+    set config (readlink -f $config)
     sed -i '' "s/^\([[:space:]]*outer\.left = \).*/\1$padding/; s/^\([[:space:]]*outer\.right = \).*/\1$padding/" $config
     aerospace reload-config
 end
