@@ -11,7 +11,7 @@ return {
 
     fzf.setup({
       files = {
-        fd_opts = base_fd_opts
+        fd_opts = base_fd_opts,
       },
 
       grep = {
@@ -37,7 +37,7 @@ return {
 
     vim.keymap.set("n", "<leader>fa", function()
       fzf.files({
-        fd_opts = base_fd_opts .. " --no-ignore"
+        fd_opts = base_fd_opts .. " --no-ignore",
       })
     end)
 
