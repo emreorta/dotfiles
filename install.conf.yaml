@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ["~"]
+
+- link:
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.gitconfig: git/.gitconfig
+    ~/.bashrc: bash/.bashrc
+    ~/.config/aerospace:
+      if: "[ $(uname) = Darwin ]" 
+      glob: true
+      path: aerospace/*
+    ~/.config/alacritty:
+      glob: true
+      path: alacritty/*
+    ~/.config/atuin:
+      glob: true
+      path: atuin/*
+    ~/.config/fish:
+      glob: true
+      path: fish/*
+    ~/.config/nvim:
+      glob: true
+      path: nvim/*
+
+# - shell:
+#   - chsh -s $(which fish)
