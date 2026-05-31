@@ -8,7 +8,6 @@ return {
     local fzf = require("fzf-lua")
 
     local base_fd_opts = "--color=never --type f --strip-cwd-prefix --hidden --exclude .git"
-
     fzf.setup({
       files = {
         fd_opts = base_fd_opts,
@@ -20,9 +19,25 @@ return {
 
       keymap = {
         builtin = {
-          ["<M-p>"] = "toggle-preview",
-          ["<C-s>"] = "preview-page-down",
-          ["<C-a>"] = "preview-page-up",
+          ["<F1>"] = "toggle-help",
+          ["<F2>"] = "toggle-fullscreen",
+          ["<F3>"] = "toggle-preview-wrap",
+          ["<F4>"] = "toggle-preview",
+          ["<C-d>"] = "preview-page-down",
+          ["<C-u>"] = "preview-page-up",
+          ["<S-left>"] = "preview-page-reset",
+        },
+        fzf = {
+          ["ctrl-z"] = "abort",
+          ["ctrl-f"] = "half-page-down",
+          ["ctrl-b"] = "half-page-up",
+          ["ctrl-a"] = "beginning-of-line",
+          ["ctrl-e"] = "end-of-line",
+          ["f3"] = "toggle-preview-wrap",
+          ["f4"] = "toggle-preview",
+          ["ctrl-d"] = "preview-page-down",
+          ["ctrl-u"] = "preview-page-up",
+          ["ctrl-q"] = "select-all+accept",
         },
       },
     })
