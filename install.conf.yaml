@@ -33,9 +33,9 @@
       glob: true
       path: aerospace/*
 
-    # ~/.config/karabiner/karabiner.json:
-    #   if: "[ $(uname) = Darwin ]"
-    #   path: karabiner/karabiner.json
+    ~/.config/karabiner/karabiner.json:
+      if: "[ $(uname) = Darwin ]"
+      path: karabiner/karabiner.json
 
     # linux specific config
     ~/.config/fuzzel/fuzzel.ini:
