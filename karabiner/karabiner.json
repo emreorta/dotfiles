@@ -5,9 +5,19 @@
         "rules": [
           {
             "description": "Swap left_control with left_command",
-            "enabled": false,
+            "enabled": true,
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "type": "device_unless",
+                    "identifiers": [
+                      {
+                        "is_built_in_keyboard": true
+                      }
+                    ]
+                  }
+                ],
                 "from": {
                   "key_code": "left_command"
                 },
@@ -19,6 +29,16 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "type": "device_unless",
+                    "identifiers": [
+                      {
+                        "is_built_in_keyboard": true
+                      }
+                    ]
+                  }
+                ],
                 "from": {
                   "key_code": "left_option"
                 },
