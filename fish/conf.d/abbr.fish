@@ -19,3 +19,7 @@ abbr -a -- gpsf "git push --force-with-lease"
 abbr -a -- grpo "git remote prune origin"
 abbr -a -- grbi "git rebase -i HEAD~"
 abbr -a -- gbd "git branch -D"
+
+# tailscale
+abbr -a -- tup "tailscale up"
+abbr -a -- tdown "tailscale down"
