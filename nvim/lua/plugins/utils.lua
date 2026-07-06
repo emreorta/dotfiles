@@ -21,16 +21,16 @@ return {
         toggleLeftSide = "<leader>nvl",
         toggleRightSide = "<leader>nvr",
       },
-      width = 125
-    }
+      width = 125,
+    },
   },
   {
     "j-hui/fidget.nvim",
     opts = {
       notification = {
         override_vim_notify = true,
-      }
-    }
+      },
+    },
   },
   {
     "christoomey/vim-tmux-navigator",
@@ -49,5 +49,14 @@ return {
       { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
+  },
+  {
+    "wom/wombient",
+    opts = {
+      enabled = false,
+      stripe = {
+        mode = "inline"
+      }
+    }
   },
 }
