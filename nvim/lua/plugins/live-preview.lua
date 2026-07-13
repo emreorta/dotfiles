@@ -3,7 +3,6 @@ return {
   dependencies = {
     "ibhagwan/fzf-lua",
   },
-  lazy = true,
   config = function()
     vim.keymap.set("n", "<leader>ls", "<cmd>LivePreview start<CR>")
     vim.keymap.set("n", "<leader>lc", "<cmd>LivePreview close<CR>")
