@@ -1,4 +1,4 @@
-local colorscheme = os.getenv("NVIM_COLORSCHEME") or "kanso-ink"
+local colorscheme = os.getenv("NVIM_COLORSCHEME") or "no-clown-fiesta-dark"
 
 local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
 vim.o.background = "dark"
