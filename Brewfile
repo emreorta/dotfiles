@@ -1,0 +1,52 @@
+# dotfiles
+brew "atuin"
+brew "bat"
+brew "difftastic"
+brew "dust"
+uv "dotbot"
+brew "eza"
+brew "fd"
+brew "fish"
+brew "fzf"
+cask "font-caskaydia-cove-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+brew "neovim"
+brew "jq"
+brew "pyenv"
+brew "rg"
+brew "tealdeer"
+brew "tmux"
+brew "tree-sitter-cli"
+brew "uv"
+brew "yq"
+brew "zoxide"
+
+# languages and their tools
+brew "go"
+brew "lua"
+brew "node"
+brew "ruff"
+brew "rustup"
+
+# kubernetes stuff
+brew "colima"
+brew "docker"
+tap "fluxcd/tap"
+brew "fluxcd/tap/flux"
+brew "helm"
+brew "kubectl"
+brew "kubectx"
+brew "kustomize"
+brew "k9s"
+
+# desktop env
+cask "karabiner-elements"
+cask "linearmouse"
+cask "nikitabobko/tap/aerospace"
+cask "raycast"
+
+# misc
+cask "actual"
+cask "obsidian"
+cask "syncthing-app"
+cask "todoist-app"

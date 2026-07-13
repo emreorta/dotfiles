@@ -35,6 +35,7 @@
 
     ~/.config/karabiner/karabiner.json:
       if: "[ $(uname) = Darwin ]"
+      force: true
       path: karabiner/karabiner.json
 
     # linux specific config
