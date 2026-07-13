@@ -23,7 +23,7 @@ return {
       "bash", "fish",
       "go", "gomod", "gosum",
       "python",
-      "json", "jsonc",
+      "json",
       "toml", "yaml",
       "hcl", "terraform",
       "markdown", "markdown_inline",
