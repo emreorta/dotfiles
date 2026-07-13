@@ -1,6 +1,12 @@
 return {
-  { "EdenEast/nightfox.nvim",           lazy = false, priority = 1000 },
-  { "webhooked/kanso.nvim",             lazy = false, priority = 1000 },
-  { "aktersnurra/no-clown-fiesta.nvim", lazy = false, priority = 1000 },
-  { "mcauley-penney/ice-cave.nvim",     lazy = false, priority = 1000 },
+  {
+    "aktersnurra/no-clown-fiesta.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      local palettes = require("no-clown-fiesta.palettes")
+      -- softens the default white fg a bit
+      palettes.get("dark").fg = "#CFCFCF"
+    end,
+  },
 }
