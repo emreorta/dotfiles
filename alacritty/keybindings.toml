@@ -1,7 +1,7 @@
 [keyboard]
 bindings = [
     { key = "Back", mods = "Alt", chars = "\u001b\u007f" }, # delete word
-    { key = "Back", mods = "command", chars = "\u0015" }, # delete line
+    { key = "Back", mods = "Command", chars = "\u0015" }, # delete line
     { key = "Left", mods = "Command", chars = "\u001bOH", mode = "AppCursor" }, # home
     { key = "Right", mods = "Command", chars = "\u001bOF", mode = "AppCursor" }, # end
     { key = "Left", mods = "Alt", chars = "\u001bb" }, # skip word left
