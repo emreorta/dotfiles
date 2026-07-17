@@ -43,5 +43,8 @@
       if: "[ $(uname) = Linux ]"
       path: fuzzel/fuzzel.ini
 
-# - shell:
-#   - chsh -s $(which fish)
+- shell:
+    - command: '[ "$SHELL" = "$(which fish)" ] || chsh -s $(which fish)'
+      stdin: true
+      stdout: true
+      stderr: true
