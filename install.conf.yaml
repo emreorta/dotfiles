@@ -43,6 +43,17 @@
       if: "[ $(uname) = Linux ]"
       path: fuzzel/fuzzel.ini
 
+# os specific font config
+- link:
+    ~/.config/alacritty/fonts.toml:
+      if: "[ $(uname) = Darwin ]"
+      path: alacritty/fonts-macos.toml
+
+- link:
+    ~/.config/alacritty/fonts.toml:
+      if: "[ $(uname) = Linux ]"
+      path: alacritty/fonts-linux.toml
+
 - shell:
     - command: '[ "$SHELL" = "$(which fish)" ] || chsh -s $(which fish)'
       stdin: true
