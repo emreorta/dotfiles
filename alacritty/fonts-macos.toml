@@ -6,11 +6,11 @@ family = "JetBrainsMono Nerd Font Mono"
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
-style = "Heavy"
+style = "Bold"
 
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font Mono"
-style = "Heavy Italic"
+style = "Bold Italic"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font Mono"
