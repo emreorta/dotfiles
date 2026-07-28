@@ -7,7 +7,6 @@
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "fzf-lua": { "branch": "main", "commit": "28440c741e927592877514fba3db21eb188caec8" },
   "gitsigns.nvim": { "branch": "main", "commit": "31d6fb2d618bca1482b9f274751ead5f03461408" },
-  "guh.nvim": { "branch": "main", "commit": "943779f7cdb0acee203985ad531fb53ff95d9c8e" },
   "helm-ls.nvim": { "branch": "main", "commit": "20df43509b02a3ce3c6b3eee254d6e2bffa9a370" },
   "hlargs.nvim": { "branch": "main", "commit": "05f3d1789642d5e1807121c05c42a5e883ba46d3" },
   "key-analyzer.nvim": { "branch": "main", "commit": "4e4bef34498e821bcbd5203f44db8b67e4f10e04" },

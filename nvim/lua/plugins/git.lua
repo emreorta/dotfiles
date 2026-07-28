@@ -105,5 +105,6 @@ return {
       })
     end,
   },
-  { "justinmk/guh.nvim" },
+  -- TODO: enable this when nvim 0.13 is released
+  -- { "justinmk/guh.nvim" },
 }
