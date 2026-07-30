@@ -59,3 +59,12 @@ vim.api.nvim_create_autocmd(
   { "BufLeave", "FocusLost", "InsertEnter", "WinLeave" },
   { pattern = "*", command = "if &nu | set nornu | endif", }
 )
+
+-- open `:help` vertically
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  callback = function(args)
+    if vim.bo[args.buf].buftype == "help" then
+      vim.cmd.wincmd("L")
+    end
+  end,
+})
