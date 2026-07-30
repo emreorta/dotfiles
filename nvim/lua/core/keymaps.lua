@@ -34,10 +34,10 @@ vim.keymap.set("n", "<leader>bd", ":bd|e#|bd#<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- replace the word under cursor globally
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>sc", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 
 -- replace the word under cursor in the same line only
-vim.keymap.set("n", "<leader>ls", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>sl", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- paste without resetting the buffer
 vim.keymap.set("x", "<leader>p", [["_dP]])
