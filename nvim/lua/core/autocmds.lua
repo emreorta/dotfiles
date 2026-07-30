@@ -68,3 +68,18 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     end
   end,
 })
+
+-- yank ring
+-- taken from: https://old.reddit.com/r/neovim/comments/1jv03t1/simple_yankring/mm9dndu/
+local prev_reg0_content = vim.fn.getreg("0")
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    if vim.v.event.operator == "y" then
+      for i = 9, 2, -1 do
+        vim.fn.setreg(tostring(i), vim.fn.getreg(tostring(i - 1)))
+      end
+      vim.fn.setreg("1", prev_reg0_content)
+      prev_reg0_content = vim.fn.getreg("0")
+    end
+  end,
+})
