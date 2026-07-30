@@ -1,10 +1,10 @@
 -- highlights a yanked lines for a short while
-vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = 'Highlight selection on yank',
-  pattern = '*',
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("highlight_yank", {}),
+  desc = "Highlight selection on yank",
+  pattern = "*",
   callback = function()
-    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 100 })
+    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
   end,
 })
 
@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- detects helm files
 vim.filetype.add({
   extension = {
-    gotmpl = 'gotmpl',
+    gotmpl = "gotmpl",
   },
   pattern = {
     [".*/templates/.*%.tpl"] = "helm",
@@ -40,10 +40,10 @@ vim.api.nvim_create_autocmd("VimResized", {
 -- restores cursor to file position in the previous editing session
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function(args)
-    local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+    local mark = vim.api.nvim_buf_get_mark(args.buf, "\"")
     local line_count = vim.api.nvim_buf_line_count(args.buf)
     if mark[1] > 0 and mark[1] <= line_count then
-      vim.cmd('normal! g`"zz')
+      vim.cmd("normal! g`\"zz")
     end
   end,
 })
@@ -52,12 +52,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- absolute numbers in insert mode, relative numbers else
 vim.api.nvim_create_autocmd(
   { "BufEnter", "FocusGained", "InsertLeave", "WinEnter" },
-  { pattern = "*", command = "if &nu && mode() != 'i' | set rnu | endif", }
+  { pattern = "*", command = "if &nu && mode() != 'i' | set rnu | endif" }
 )
 
 vim.api.nvim_create_autocmd(
   { "BufLeave", "FocusLost", "InsertEnter", "WinLeave" },
-  { pattern = "*", command = "if &nu | set nornu | endif", }
+  { pattern = "*", command = "if &nu | set nornu | endif" }
 )
 
 -- open `:help` vertically
