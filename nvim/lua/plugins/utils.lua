@@ -1,8 +1,8 @@
 return {
   -- can't use opts with these
   { "tpope/vim-repeat" },
-  { "mbbill/undotree" },
 
+  { "XXiaoA/atone.nvim", cmd = "Atone", opts = {} },
   { "m-demare/hlargs.nvim", opts = {} },
   { "petertriho/nvim-scrollbar", opts = {} },
   { "meznaric/key-analyzer.nvim", opts = {} },
