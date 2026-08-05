@@ -1,4 +1,4 @@
-# `core.keymaps` must be reloaded before lazy init due to mapleader
+-- `core.keymaps` must be reloaded before lazy init due to mapleader
 
 require("core.autocmds")
 require("core.keymaps")
