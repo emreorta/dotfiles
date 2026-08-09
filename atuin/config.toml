@@ -1,5 +1,6 @@
 search_mode = "daemon-fuzzy"
 store_failed = true
+workspaces = true
 
 [daemon]
 enabled = true
