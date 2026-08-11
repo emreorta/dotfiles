@@ -7,7 +7,6 @@ set -gx XDG_STATE_HOME $HOME/.local/state
 set -gx PYTHONDONTWRITEBYTECODE 1
 set -gx PIP_REQUIRE_VIRTUALENV 0
 set -gx VIRTUALENVS_HOME $HOME/.virtualenvs
-set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
 # disable auto updates in homebrew
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
