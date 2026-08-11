@@ -48,6 +48,9 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 -- yank the file contents
 vim.keymap.set("n", "yaf", "<cmd>%y<CR>")
 
+-- highlight the file contents
+vim.keymap.set("n", "vaf", "<esc>gg0VG")
+
 -- duplicate the line(s) and comment out the previous one(s)
 vim.keymap.set("n", "yc", "yygccp", { remap = true })
 vim.keymap.set("v", "<leader>C", "ygvgc`>p", { remap = true })
