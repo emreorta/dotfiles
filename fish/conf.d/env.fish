@@ -4,8 +4,8 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
 # python stuff
-set -gx PYTHONDONTWRITEBYTECODE True
-set -gx PIP_REQUIRE_VIRTUALENV False
+set -gx PYTHONDONTWRITEBYTECODE 1
+set -gx PIP_REQUIRE_VIRTUALENV 0
 set -gx VIRTUALENVS_HOME $HOME/.virtualenvs
 set -gx PIP_DOWNLOAD_CACHE $HOME/.pip/cache
 
