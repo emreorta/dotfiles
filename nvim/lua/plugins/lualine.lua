@@ -4,8 +4,6 @@ return {
   config = function()
     local lualine = require("lualine")
 
-    -- Color table for highlights
-    -- stylua: ignore
     local colors = {
       bg       = "#202328",
       fg       = "#bbc2cf",
@@ -36,7 +34,7 @@ return {
 
     local config = {
       options = {
-        -- disable sections and component separators
+        -- disable separators (default is a weird, big > char)
         component_separators = "",
         section_separators = "",
         theme = {
@@ -46,17 +44,18 @@ return {
         },
       },
       sections = {
-        -- these are to remove the defaults
+        -- remove the defaults
         lualine_a = {},
         lualine_b = {},
         lualine_y = {},
         lualine_z = {},
+
         -- these will be filled later
         lualine_c = {},
         lualine_x = {},
       },
       inactive_sections = {
-        -- these are to remove the defaults
+        -- remove the defaults
         lualine_a = {},
         lualine_b = {},
         lualine_y = {},
@@ -66,26 +65,18 @@ return {
       },
     }
 
-    -- adds a component in lualine_c at left section
+    -- insert a component in lualine_c at left section
     local function ins_left(component)
       table.insert(config.sections.lualine_c, component)
     end
 
-    -- adds a component in lualine_x at right section
+    -- insert a component in lualine_x at right section
     local function ins_right(component)
       table.insert(config.sections.lualine_x, component)
     end
 
     -- components for the left section
-    ins_left {
-      function()
-        return "▊"
-      end,
-      color = { fg = colors.blue },
-      padding = { left = 0, right = 1 },
-    }
-
-    ins_left {
+    ins_left({
       -- mode component
       function()
         return ""
@@ -116,25 +107,16 @@ return {
         }
         return { fg = mode_color[vim.fn.mode()] }
       end,
-      padding = { right = 1 },
-    }
+      padding = { left = 2, right = 1 },
+    })
 
-    ins_left {
-      "filesize",
-      cond = conditions.buffer_not_empty,
-    }
-
-    ins_left {
+    ins_left({
       "filename",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.magenta, gui = "bold" },
-    }
+    })
 
-    ins_left { "branch" }
-    ins_left { "location" }
-    ins_left { "progress", color = { fg = colors.fg, gui = "bold" } }
-
-    ins_left {
+    ins_left({
       "diagnostics",
       sources = { "nvim_diagnostic" },
       symbols = { error = " ", warn = " ", info = " " },
@@ -143,16 +125,17 @@ return {
         color_warn = { fg = colors.yellow },
         color_info = { fg = colors.cyan },
       },
-    }
+    })
 
     -- components for the mid section (even though it looks like "left")
-    ins_left {
+    -- without this, all components are aligned to the left
+    ins_left({
       function()
         return "%="
       end,
-    }
+    })
 
-    ins_left {
+    ins_left({
       -- lsp server name
       function()
         local msg = "No Active Lsp"
@@ -169,32 +152,17 @@ return {
         end
         return msg
       end,
-      icon = " LSP:",
+      icon = "",
       color = { fg = "#ffffff", gui = "bold" },
-    }
+    })
 
     -- components for the right section
-    ins_right {
-      "o:encoding",
-      fmt = string.upper,
-      cond = conditions.hide_in_width,
-      color = { fg = colors.green, gui = "bold" },
-    }
-
-    ins_right {
-      "fileformat",
-      fmt = string.upper,
-      icons_enabled = false,       -- eviline doesn't support icons for some reason
-      color = { fg = colors.green, gui = "bold" },
-    }
-
-    ins_right {
+    ins_right({
       "branch",
-      icon = "",
-      color = { fg = colors.violet, gui = "bold" },
-    }
+      padding = { right = 2 }
+    })
 
-    ins_right {
+    ins_right({
       "diff",
       symbols = { added = " ", modified = "󰝤 ", removed = " " },
       diff_color = {
@@ -203,16 +171,9 @@ return {
         removed = { fg = colors.red },
       },
       cond = conditions.hide_in_width,
-    }
-
-    ins_right {
-      function()
-        return "▊"
-      end,
-      color = { fg = colors.blue },
-      padding = { left = 1 },
-    }
+      padding = { right = 2 },
+    })
 
     lualine.setup(config)
-  end
+  end,
 }
