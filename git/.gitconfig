@@ -54,9 +54,8 @@
 [help]
     autocorrect = prompt
 
-[user]
-    name = Emre Orta
-    email = github@emreorta.com
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig-personal
 
-[includeIf "gitdir:~/dev/git/"]
-    path = ~/dev/git/.gitconfig
+[includeIf "gitdir:~/dev/work/"]
+    path = ~/.gitconfig-work
