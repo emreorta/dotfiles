@@ -45,7 +45,10 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldtext = ""
 
-vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+-- TODO: find a clipboard provider that works inside the container
+if not vim.env.NVIM_IN_DOCKER then
+  vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+end
 
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"

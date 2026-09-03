@@ -42,12 +42,18 @@ return {
       "TmuxNavigatePrevious",
       "TmuxNavigatorProcessList",
     },
-    keys = {
+    keys = vim.env.TMUX and {
       { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
       { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
       { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
       { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    } or {
+      { "<C-h>", "<C-w>h" },
+      { "<C-j>", "<C-w>j" },
+      { "<C-k>", "<C-w>k" },
+      { "<C-l>", "<C-w>l" },
+      { "<C-\\>", "<C-w>p" },
     },
   },
   {
