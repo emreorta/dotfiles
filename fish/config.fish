@@ -1,7 +1,3 @@
-# add fish and python to $PATH
-fish_add_path $(which fish)
-fish_add_path $(which python3)
-
 if status is-interactive
     # enable fzf, zoxide, pyenv keybindings
     fzf --fish | source
