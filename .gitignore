@@ -1,4 +1,10 @@
+# fish stuff
 fish/functions/nvm.fish
 fish/functions/fisher.fish
 fish/fish_variables
 fish/conf.d/private-*.fish
+fish/conf.d/_*.fish
+fish/completions
+
+# macos stuff
+.DS_Store
