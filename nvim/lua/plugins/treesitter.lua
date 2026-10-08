@@ -28,7 +28,7 @@ return {
       "hcl", "terraform",
       "markdown", "markdown_inline",
       -- other
-      "jq", "make", "proto", "regex", "ssh_config", "tmux",
+      "jq", "make", "proto", "regex", "ssh_config",
     }
     local installed = require("nvim-treesitter.config").get_installed()
     local to_install = vim.iter(parsers)
